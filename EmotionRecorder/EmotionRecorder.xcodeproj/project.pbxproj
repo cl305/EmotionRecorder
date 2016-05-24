@@ -22,6 +22,7 @@
 		635855451CF4AAF300BB75CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635855481CF4AAF300BB75CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6358554A1CF4AAF300BB75CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C3DD1E1CF4C290005C5FCB /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = Assets.xcassets/video.dataset/video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 				635855451CF4AAF300BB75CC /* Assets.xcassets */,
 				635855471CF4AAF300BB75CC /* LaunchScreen.storyboard */,
 				6358554A1CF4AAF300BB75CC /* Info.plist */,
+				63C3DD1E1CF4C290005C5FCB /* video.mp4 */,
 			);
 			path = EmotionRecorder;
 			sourceTree = "<group>";
@@ -287,6 +289,7 @@
 				6358554F1CF4AAF300BB75CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
