@@ -20,13 +20,16 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        playVideo()
+    }
+    
+    func playVideo(){
         var fileURL = NSURL(fileURLWithPath: "/Users/codyli/Documents/Summer 2016 Internship/EmotionRecorder/EmotionRecorder/EmotionRecorder/Assets.xcassets/video.dataset/video.mp4")
         playerView = AVPlayer(URL: fileURL)
         playerViewController.player = playerView
         self.presentViewController(playerViewController, animated: true){
             self.playerViewController.player?.play()
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
