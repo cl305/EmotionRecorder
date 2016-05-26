@@ -37,7 +37,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 break
             }
         }
-        
+        beginSession(captureDevice!)
+    }
+    
+    func beginSession(captureDevice : AVCaptureDevice){
         var error : NSError?
         var input : AVCaptureDeviceInput!
         do {
@@ -62,6 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 captureSession?.startRunning()
             }
         }
+
     }
     
     override func viewDidLoad() {
