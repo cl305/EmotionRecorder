@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if(captureSession?.canAddOutput(stillImageOutput) != nil){
                 captureSession?.addOutput(stillImageOutput)
                 previewLayer = AVCaptureVideoPreviewLayer(session : captureSession)
-                previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
+                previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
                 previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
                 cameraView.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
