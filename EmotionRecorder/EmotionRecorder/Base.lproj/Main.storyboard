@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,22 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cR-6R-B2s">
-                                <rect key="frame" x="257" y="158" width="87" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cR-6R-B2s">
+                                <rect key="frame" x="257" y="42" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JU7-rg-4Tb"/>
+                                </constraints>
                                 <state key="normal" title="Watch Video"/>
                                 <connections>
                                     <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xni-XW-t0q"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="lL2-BK-OWZ">
+                                <rect key="frame" x="50" y="103" width="800" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7cR-6R-B2s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="6XY-8c-iNK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lL2-BK-OWZ" secondAttribute="bottom" constant="297" id="IZx-Rw-Lo6"/>
+                            <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kyg-MQ-2HV"/>
+                            <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="lL2-BK-OWZ" secondAttribute="centerX" id="qHO-cO-ewP"/>
+                            <constraint firstItem="lL2-BK-OWZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="s1E-yz-mz6"/>
+                            <constraint firstItem="lL2-BK-OWZ" firstAttribute="top" secondItem="7cR-6R-B2s" secondAttribute="bottom" constant="31" id="vHx-FP-njp"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraView" destination="lL2-BK-OWZ" id="jsr-zZ-Nn9"/>
                         <outlet property="watchVideoButton" destination="7cR-6R-B2s" id="VwJ-Sb-GMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="79" y="373"/>
         </scene>
     </scenes>
 </document>
