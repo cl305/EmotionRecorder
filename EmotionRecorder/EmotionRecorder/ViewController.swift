@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate {
     
     var playerViewController = AVPlayerViewController()
     var playerView = AVPlayer()
@@ -18,8 +18,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var captureSession : AVCaptureSession?
     var stillImageOutput : AVCaptureStillImageOutput?
     var previewLayer : AVCaptureVideoPreviewLayer?
-    
+    let videoFileOutput = AVCaptureMovieFileOutput()
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -68,10 +70,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
+    @IBAction func recordVideo(sender: AnyObject) {
+        var recordingDelegate : AVCaptureFileOutputRecordingDelegate? = self
+        self.captureSession!.addOutput(videoFileOutput)
+        
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let filePath = documentsURL.URLByAppendingPathComponent("temp")
+        videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
+    }
+    
+    @IBAction func stopVideo(sender: AnyObject) {
+        self.videoFileOutput.stopRecording()
+    }
+    
+    func captureOutput(captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAtURL fileURL: NSURL!, fromConnections connections: [AnyObject]!) {
+        return
+    }
+    
+    func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
+//        return
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
         previewLayer?.frame = cameraView.bounds
@@ -79,7 +102,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //Properties
     @IBOutlet weak var watchVideoButton: UIButton!
-    @IBOutlet weak var recordVideoButton: UIButton!
     //
     
     @IBAction func playVideo(sender: AnyObject) {

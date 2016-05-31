@@ -18,12 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="lL2-BK-OWZ">
-                                <rect key="frame" x="50" y="366" width="500" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cR-6R-B2s">
-                                <rect key="frame" x="257" y="44" width="87" height="30"/>
+                                <rect key="frame" x="250" y="46" width="87" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JU7-rg-4Tb"/>
                                 </constraints>
@@ -32,19 +28,42 @@
                                     <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xni-XW-t0q"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="lL2-BK-OWZ">
+                                <rect key="frame" x="50" y="366" width="500" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvO-tG-W6v">
+                                <rect key="frame" x="148" y="328" width="92" height="30"/>
+                                <state key="normal" title="Record Video"/>
+                                <connections>
+                                    <action selector="recordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vde-bK-bBY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5r-lN-7tx">
+                                <rect key="frame" x="355" y="328" width="76" height="30"/>
+                                <state key="normal" title="Stop Video"/>
+                                <connections>
+                                    <action selector="stopVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pa1-20-fkS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7cR-6R-B2s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="6XY-8c-iNK"/>
+                            <constraint firstItem="OvO-tG-W6v" firstAttribute="centerX" secondItem="7cR-6R-B2s" secondAttribute="centerX" constant="-99.5" id="4pJ-ze-n5Q"/>
+                            <constraint firstItem="7cR-6R-B2s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="6XY-8c-iNK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lL2-BK-OWZ" secondAttribute="bottom" constant="34" id="IZx-Rw-Lo6"/>
-                            <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kyg-MQ-2HV"/>
-                            <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="lL2-BK-OWZ" secondAttribute="centerX" constant="0.5" id="qHO-cO-ewP"/>
+                            <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-6.5" id="Kyg-MQ-2HV"/>
+                            <constraint firstItem="lL2-BK-OWZ" firstAttribute="top" secondItem="OvO-tG-W6v" secondAttribute="bottom" constant="8" symbolic="YES" id="N0Q-tV-Zff"/>
+                            <constraint firstItem="c5r-lN-7tx" firstAttribute="baseline" secondItem="OvO-tG-W6v" secondAttribute="baseline" id="Tcn-SC-nRs"/>
+                            <constraint firstAttribute="trailing" secondItem="c5r-lN-7tx" secondAttribute="trailing" constant="184" id="Wnc-ty-Z95"/>
+                            <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="lL2-BK-OWZ" secondAttribute="centerX" constant="-6.5" id="qHO-cO-ewP"/>
                             <constraint firstItem="lL2-BK-OWZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="s1E-yz-mz6"/>
-                            <constraint firstItem="lL2-BK-OWZ" firstAttribute="top" secondItem="7cR-6R-B2s" secondAttribute="bottom" constant="292" id="vHx-FP-njp"/>
+                            <constraint firstItem="lL2-BK-OWZ" firstAttribute="top" secondItem="7cR-6R-B2s" secondAttribute="bottom" constant="290" id="vHx-FP-njp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="lL2-BK-OWZ" id="jsr-zZ-Nn9"/>
+                        <outlet property="stopRecording" destination="c5r-lN-7tx" id="4qE-Vz-hcc"/>
                         <outlet property="watchVideoButton" destination="7cR-6R-B2s" id="VwJ-Sb-GMd"/>
                     </connections>
                 </viewController>
