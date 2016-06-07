@@ -70,18 +70,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
-    @IBAction func recordVideo(sender: AnyObject) {
-        var recordingDelegate : AVCaptureFileOutputRecordingDelegate? = self
-        self.captureSession!.addOutput(videoFileOutput)
-        
-        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        let filePath = documentsURL.URLByAppendingPathComponent("temp")
-        videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
-    }
-    
-    @IBAction func stopVideo(sender: AnyObject) {
-        self.videoFileOutput.stopRecording()
-    }
+//    @IBAction func recordVideo(sender: AnyObject) {
+//        var recordingDelegate : AVCaptureFileOutputRecordingDelegate? = self
+//        self.captureSession!.addOutput(videoFileOutput)
+//        
+//        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+//        let filePath = documentsURL.URLByAppendingPathComponent("temp")
+//        videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
+//    }
+//    
+//    @IBAction func stopVideo(sender: AnyObject) {
+//        self.videoFileOutput.stopRecording()
+//    }
     
     func captureOutput(captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAtURL fileURL: NSURL!, fromConnections connections: [AnyObject]!) {
         return

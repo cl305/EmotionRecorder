@@ -12,6 +12,7 @@
 		635855441CF4AAF300BB75CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635855421CF4AAF300BB75CC /* Main.storyboard */; };
 		635855461CF4AAF300BB75CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635855451CF4AAF300BB75CC /* Assets.xcassets */; };
 		635855491CF4AAF300BB75CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635855471CF4AAF300BB75CC /* LaunchScreen.storyboard */; };
+		6387BA6A1D07470500AEA8D7 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BA691D07470500AEA8D7 /* Telemetry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		635855451CF4AAF300BB75CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635855481CF4AAF300BB75CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6358554A1CF4AAF300BB75CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6387BA691D07470500AEA8D7 /* Telemetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
 		63C3DD1E1CF4C290005C5FCB /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = Assets.xcassets/video.dataset/video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 				6358553E1CF4AAF300BB75CC /* AppDelegate.swift */,
 				635855401CF4AAF300BB75CC /* ViewController.swift */,
 				635855421CF4AAF300BB75CC /* Main.storyboard */,
+				6387BA691D07470500AEA8D7 /* Telemetry.swift */,
 				635855451CF4AAF300BB75CC /* Assets.xcassets */,
 				635855471CF4AAF300BB75CC /* LaunchScreen.storyboard */,
 				6358554A1CF4AAF300BB75CC /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635855411CF4AAF300BB75CC /* ViewController.swift in Sources */,
+				6387BA6A1D07470500AEA8D7 /* Telemetry.swift in Sources */,
 				6358553F1CF4AAF300BB75CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

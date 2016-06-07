@@ -63,7 +63,6 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="lL2-BK-OWZ" id="jsr-zZ-Nn9"/>
-                        <outlet property="stopRecording" destination="c5r-lN-7tx" id="4qE-Vz-hcc"/>
                         <outlet property="watchVideoButton" destination="7cR-6R-B2s" id="VwJ-Sb-GMd"/>
                     </connections>
                 </viewController>
