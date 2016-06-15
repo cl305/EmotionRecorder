@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63220F1C1D0888160073868C /* UploadCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63220F1B1D0888160073868C /* UploadCSV.swift */; };
 		6358553F1CF4AAF300BB75CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358553E1CF4AAF300BB75CC /* AppDelegate.swift */; };
 		635855411CF4AAF300BB75CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635855401CF4AAF300BB75CC /* ViewController.swift */; };
 		635855441CF4AAF300BB75CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635855421CF4AAF300BB75CC /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63220F1B1D0888160073868C /* UploadCSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadCSV.swift; sourceTree = "<group>"; };
 		6358553B1CF4AAF300BB75CC /* EmotionRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6358553E1CF4AAF300BB75CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635855401CF4AAF300BB75CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				635855401CF4AAF300BB75CC /* ViewController.swift */,
 				635855421CF4AAF300BB75CC /* Main.storyboard */,
 				6387BA691D07470500AEA8D7 /* Telemetry.swift */,
+				63220F1B1D0888160073868C /* UploadCSV.swift */,
 				635855451CF4AAF300BB75CC /* Assets.xcassets */,
 				635855471CF4AAF300BB75CC /* LaunchScreen.storyboard */,
 				6358554A1CF4AAF300BB75CC /* Info.plist */,
@@ -144,6 +147,7 @@
 				635855411CF4AAF300BB75CC /* ViewController.swift in Sources */,
 				6387BA6A1D07470500AEA8D7 /* Telemetry.swift in Sources */,
 				6358553F1CF4AAF300BB75CC /* AppDelegate.swift in Sources */,
+				63220F1C1D0888160073868C /* UploadCSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

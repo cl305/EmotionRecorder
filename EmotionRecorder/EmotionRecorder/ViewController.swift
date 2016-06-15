@@ -88,21 +88,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
-//        return
+        return
     }
     
     override func viewDidLoad() {
+//        let tele = Telemetry()
         super.viewDidLoad()
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
+        let tele = Telemetry()
         previewLayer?.frame = cameraView.bounds
     }
     
     //Properties
     @IBOutlet weak var watchVideoButton: UIButton!
-    //
     
     @IBAction func playVideo(sender: AnyObject) {
         var fileURL = NSURL(fileURLWithPath: "/Users/codyli/Documents/Summer 2016 Internship/EmotionRecorder/EmotionRecorder/EmotionRecorder/Assets.xcassets/video.dataset/video.mp4")
@@ -113,6 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
 
     }
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

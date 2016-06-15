@@ -24,9 +24,6 @@
                                     <constraint firstAttribute="height" constant="30" id="JU7-rg-4Tb"/>
                                 </constraints>
                                 <state key="normal" title="Watch Video"/>
-                                <connections>
-                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xni-XW-t0q"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="lL2-BK-OWZ">
                                 <rect key="frame" x="50" y="366" width="500" height="200"/>
@@ -39,11 +36,21 @@
                                     <action selector="recordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vde-bK-bBY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5r-lN-7tx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5r-lN-7tx">
                                 <rect key="frame" x="355" y="328" width="76" height="30"/>
                                 <state key="normal" title="Stop Video"/>
                                 <connections>
                                     <action selector="stopVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pa1-20-fkS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObN-rv-22E">
+                                <rect key="frame" x="250" y="46" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="i6t-m3-ub6"/>
+                                </constraints>
+                                <state key="normal" title="Watch Video"/>
+                                <connections>
+                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBN-lC-Cdn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,10 +62,12 @@
                             <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-6.5" id="Kyg-MQ-2HV"/>
                             <constraint firstItem="lL2-BK-OWZ" firstAttribute="top" secondItem="OvO-tG-W6v" secondAttribute="bottom" constant="8" symbolic="YES" id="N0Q-tV-Zff"/>
                             <constraint firstItem="c5r-lN-7tx" firstAttribute="baseline" secondItem="OvO-tG-W6v" secondAttribute="baseline" id="Tcn-SC-nRs"/>
-                            <constraint firstAttribute="trailing" secondItem="c5r-lN-7tx" secondAttribute="trailing" constant="184" id="Wnc-ty-Z95"/>
+                            <constraint firstAttribute="trailing" secondItem="c5r-lN-7tx" secondAttribute="trailing" constant="169" id="Wnc-ty-Z95"/>
+                            <constraint firstItem="ObN-rv-22E" firstAttribute="leading" secondItem="7cR-6R-B2s" secondAttribute="leading" id="cvJ-OT-eAI"/>
                             <constraint firstItem="7cR-6R-B2s" firstAttribute="centerX" secondItem="lL2-BK-OWZ" secondAttribute="centerX" constant="-6.5" id="qHO-cO-ewP"/>
                             <constraint firstItem="lL2-BK-OWZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="s1E-yz-mz6"/>
                             <constraint firstItem="lL2-BK-OWZ" firstAttribute="top" secondItem="7cR-6R-B2s" secondAttribute="bottom" constant="290" id="vHx-FP-njp"/>
+                            <constraint firstItem="ObN-rv-22E" firstAttribute="baseline" secondItem="7cR-6R-B2s" secondAttribute="baseline" id="y1c-N7-iTu"/>
                         </constraints>
                     </view>
                     <connections>
