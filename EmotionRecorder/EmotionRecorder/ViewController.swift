@@ -9,11 +9,13 @@
 import UIKit
 import AVKit
 import AVFoundation
+import MessageUI
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate, MFMailComposeViewControllerDelegate{
     
     var playerViewController = AVPlayerViewController()
     var playerView = AVPlayer()
+    var tele : Telemetry?
     
     var captureSession : AVCaptureSession?
     var stillImageOutput : AVCaptureStillImageOutput?
@@ -72,7 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func recordVideo(sender: AnyObject) {
         //Starting recording data
-        let tele = Telemetry()
+        tele = Telemetry()
         
         var recordingDelegate : AVCaptureFileOutputRecordingDelegate? = self
         self.captureSession!.addOutput(videoFileOutput)
@@ -84,6 +86,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func stopVideo(sender: AnyObject) {
         self.videoFileOutput.stopRecording()
+        sendMail()
     }
     
     func captureOutput(captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAtURL fileURL: NSURL!, fromConnections connections: [AnyObject]!) {
@@ -94,8 +97,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return
     }
     
+    func sendMail(){
+        if (MFMailComposeViewController.canSendMail()){
+            print("passed this check")
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            
+            mailComposer.setSubject("CSV File")
+            mailComposer.setMessageBody("body text", isHTML: false)
+            var data = tele!.dataString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+            if let content = data{
+                print("NSData : \(content)")
+            }
+            
+            mailComposer.addAttachmentData(data!, mimeType: "text/csv", fileName: "Telemetry.csv")
+            self.presentViewController(mailComposer, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
     override func viewDidLoad() {
-//        let tele = Telemetry()
         super.viewDidLoad()
     }
 
@@ -108,9 +133,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var watchVideoButton: UIButton!
     
     @IBAction func playVideo(sender: AnyObject) {
-//        var fileURL = NSURL(fileURLWithPath: "/Users/codyli/Documents/Summer 2016 Internship/EmotionRecorder/EmotionRecorder/EmotionRecorder/Assets.xcassets/video.dataset/video.mp4")
         let fileURL = NSBundle.mainBundle().pathForResource("video", ofType:"mp4")
-//        playerView = AVPlayer(URL: fileURL)
         playerView = AVPlayer(URL: NSURL(fileURLWithPath: fileURL!))
         playerViewController.player = playerView
         self.presentViewController(playerViewController, animated: true){
