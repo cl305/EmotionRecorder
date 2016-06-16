@@ -71,11 +71,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func recordVideo(sender: AnyObject) {
+        //Starting recording data
+        let tele = Telemetry()
+        
         var recordingDelegate : AVCaptureFileOutputRecordingDelegate? = self
         self.captureSession!.addOutput(videoFileOutput)
         
         let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        let filePath = documentsURL.URLByAppendingPathComponent("temp")
+        let filePath = documentsURL.URLByAppendingPathComponent("recording.mp4")
         videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
     }
     
@@ -98,7 +101,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
-        let tele = Telemetry()
         previewLayer?.frame = cameraView.bounds
     }
     
@@ -106,8 +108,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var watchVideoButton: UIButton!
     
     @IBAction func playVideo(sender: AnyObject) {
-        var fileURL = NSURL(fileURLWithPath: "/Users/codyli/Documents/Summer 2016 Internship/EmotionRecorder/EmotionRecorder/EmotionRecorder/Assets.xcassets/video.dataset/video.mp4")
-        playerView = AVPlayer(URL: fileURL)
+//        var fileURL = NSURL(fileURLWithPath: "/Users/codyli/Documents/Summer 2016 Internship/EmotionRecorder/EmotionRecorder/EmotionRecorder/Assets.xcassets/video.dataset/video.mp4")
+        let fileURL = NSBundle.mainBundle().pathForResource("video", ofType:"mp4")
+//        playerView = AVPlayer(URL: fileURL)
+        playerView = AVPlayer(URL: NSURL(fileURLWithPath: fileURL!))
         playerViewController.player = playerView
         self.presentViewController(playerViewController, animated: true){
             self.playerViewController.player?.play()

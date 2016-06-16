@@ -14,6 +14,7 @@
 		635855461CF4AAF300BB75CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635855451CF4AAF300BB75CC /* Assets.xcassets */; };
 		635855491CF4AAF300BB75CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635855471CF4AAF300BB75CC /* LaunchScreen.storyboard */; };
 		6387BA6A1D07470500AEA8D7 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BA691D07470500AEA8D7 /* Telemetry.swift */; };
+		63F5E6901D1316D400930DEC /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 63C3DD1E1CF4C290005C5FCB /* video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F5E6901D1316D400930DEC /* video.mp4 in Resources */,
 				635855491CF4AAF300BB75CC /* LaunchScreen.storyboard in Resources */,
 				635855461CF4AAF300BB75CC /* Assets.xcassets in Resources */,
 				635855441CF4AAF300BB75CC /* Main.storyboard in Resources */,
